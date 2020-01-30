@@ -5,15 +5,18 @@
         what can i help you with?
       </h2>
       <label>
-        <span>what should i call you?</span> <input type="text">
+        <span>what should i call you?</span>
+        <input v-model="name" type="text">
       </label>
       <label>
-        <span>how do i reach you?</span> <input type="text">
+        <span>how do i reach you?</span>
+        <input v-model="contactDetails" type="text">
       </label>
       <label>
-        <span>what do you want to tell me?</span> <textarea rows="5">asd</textarea>
+        <span>what do you want to tell me?</span>
+        <textarea v-model="message" rows="5">asd</textarea>
       </label>
-      <a class="button--green">
+      <a @click="send" class="button--green">
         send
       </a>
       <a class="button--red" href="/">go back</a>
@@ -23,7 +26,24 @@
 
 <script>
 export default {
+  data () {
+    return {
+      name: '',
+      contactDetails: '',
+      message: ''
+    }
+  },
+  methods: {
+    send () {
+      const message = {
+        from: this.name,
+        contact: this.contactDetails,
+        message: this.message
+      }
 
+      console.log(message)
+    }
+  }
 }
 </script>
 
