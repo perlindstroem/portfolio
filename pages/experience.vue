@@ -5,6 +5,7 @@
         v-for="exp in workExperiences"
         :key="exp.title"
         :title="exp.title"
+        :company="exp.company"
       />
       <a href="/">go back</a>
     </div>
@@ -22,16 +23,20 @@ export default {
     return {
       workExperiences: [
         {
-          title: 'Associate'
+          title: 'Associate',
+          company: 'Digital Edge'
         },
         {
-          title: 'Research Intern'
+          title: 'Research Intern',
+          company: 'Signality'
         },
         {
-          title: 'Lead Software Engineer'
+          title: 'Lead Software Engineer',
+          company: 'Skira'
         },
         {
-          title: 'Software Engineer'
+          title: 'Software Engineer',
+          company: 'GOLI'
         }
       ]
     }
