@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <p>hello</p>
-    <a href="/">go back</a>
+  <div class="container">
+    <div>
+      <p>hello</p>
+      <a href="/">go back</a>
+    </div>
   </div>
 </template>
 
