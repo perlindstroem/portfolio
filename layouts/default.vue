@@ -61,4 +61,19 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
+.button--red {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #5e3535;
+  color: #5e3535;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-left: 15px;
+}
+
+.button--red:hover {
+  color: #fff;
+  background-color: #5e3535;
+}
 </style>
