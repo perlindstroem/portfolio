@@ -3,11 +3,16 @@
     <div>
       <logo />
       <h1 class="title">
-        case2
+        hi there, welcome!
       </h1>
       <h2 class="subtitle">
-        My awesome Nuxt.js project
+        this is the portfolio of <strong>per lindström</strong>.
       </h2>
+      <p class="description">
+        i am a software engineer with an interest in scalable web applications and data science.<br>
+        here, you can read about me and what i've done so far.<br>
+        if you're interested in working with me, shoot an email or dm my way.
+      </p>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -64,6 +69,10 @@ export default {
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
+}
+
+.description {
+  line-height: 1.5em;
 }
 
 .links {
