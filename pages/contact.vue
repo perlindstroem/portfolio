@@ -69,6 +69,7 @@ input[type="text"], textarea {
   border: 1px solid rgb(130, 158, 158);
   border-radius: .5em;
   padding: .5em;
+  resize: none;
 }
 
 input[type="text"]:focus, textarea:focus {
