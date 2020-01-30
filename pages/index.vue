@@ -5,11 +5,13 @@
         hi there, welcome!
       </h1>
       <h2 class="subtitle">
-        this is the portfolio of <strong>per lindström</strong>.
+        this is the digital resumé of <strong>per lindström</strong>.
       </h2>
       <p class="description">
         i am a software engineer with an interest in <em>scalable web applications</em> and <em>data science</em>.<br>
-        here, you can read about me and what i've done so far.<br>
+        when i'm not engineering stuff, i enjoy experimenting in the kitchen and learning new things.<br>
+        i have recently taken up climbing, which is my new favourite physical activity.<br><br>
+        on this site, you can read about me and what i've done so far.<br>
         if you're interested in working with me, shoot me a message.
       </p>
       <div class="links">
