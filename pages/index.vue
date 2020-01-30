@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <div>
-      <logo />
       <h1 class="title">
         hi there, welcome!
       </h1>
@@ -9,24 +8,22 @@
         this is the portfolio of <strong>per lindström</strong>.
       </h2>
       <p class="description">
-        i am a software engineer with an interest in scalable web applications and data science.<br>
+        i am a software engineer with an interest in <em>scalable web applications</em> and <em>data science</em>.<br>
         here, you can read about me and what i've done so far.<br>
-        if you're interested in working with me, shoot an email or dm my way.
+        if you're interested in working with me, shoot me a message.
       </p>
       <div class="links">
         <a
-          href="https://nuxtjs.org/"
-          target="_blank"
+          href="/experience"
           class="button--green"
         >
-          Documentation
+          work experience
         </a>
         <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
+          href="/contact"
           class="button--grey"
         >
-          GitHub
+          contact me
         </a>
       </div>
     </div>
@@ -34,12 +31,7 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
-  components: {
-    Logo
-  }
 }
 </script>
 
@@ -73,6 +65,8 @@ export default {
 
 .description {
   line-height: 1.5em;
+  font-size: 1.2em;
+  color: #2c4055;
 }
 
 .links {
