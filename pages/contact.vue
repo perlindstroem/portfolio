@@ -49,7 +49,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 label {
   display: block;
   margin-bottom: 1em;
