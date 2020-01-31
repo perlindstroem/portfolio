@@ -19,7 +19,9 @@
       <a @click="send" class="button--green">
         send
       </a>
-      <a class="button--red" href="/">go back</a>
+      <nuxt-link class="button--red" to="/">
+        go back
+      </nuxt-link>
     </div>
   </div>
 </template>

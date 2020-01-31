@@ -7,7 +7,9 @@
         :title="exp.title"
         :company="exp.company"
       />
-      <a href="/">go back</a>
+      <nuxt-link to="/">
+        go back
+      </nuxt-link>
     </div>
   </div>
 </template>

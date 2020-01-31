@@ -15,18 +15,18 @@
         if you're interested in working with me, shoot me a message.
       </p>
       <div class="links">
-        <a
-          href="/experience"
+        <nuxt-link
+          to="/experience"
           class="button--green"
         >
           work experience
-        </a>
-        <a
-          href="/contact"
+        </nuxt-link>
+        <nuxt-link
+          to="/contact"
           class="button--grey"
         >
           contact me
-        </a>
+        </nuxt-link>
       </div>
     </div>
   </div>
