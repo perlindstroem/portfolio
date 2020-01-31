@@ -16,12 +16,12 @@
         <span>what do you want to tell me?</span>
         <textarea v-model="message" rows="5">asd</textarea>
       </label>
-      <a @click="send" class="button--green">
-        send
-      </a>
       <nuxt-link class="button--red" to="/">
         go back
       </nuxt-link>
+      <a @click="send" class="button--green">
+        send
+      </a>
     </div>
   </div>
 </template>
