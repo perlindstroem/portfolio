@@ -43,6 +43,7 @@ export default {
         message: this.message
       }
 
+      // TODO should send message content to personal email address
       console.log(message)
     }
   }

@@ -1,21 +1,20 @@
 <template>
   <div class="work-item">
     <p class="title">
-      <strong>{{ title }}</strong> at <em>{{ company }}</em>
+      <strong>{{ experience.title }}</strong> at <em>{{ experience.company }}</em>
     </p>
   </div>
 </template>
 
 <script>
+const requiredExperienceKeys = ['title', 'company', 'start', 'end']
+
 export default {
   props: {
-    title: {
+    experience: {
       required: true,
-      type: String
-    },
-    company: {
-      required: true,
-      type: String
+      type: Object,
+      validator: obj => requiredExperienceKeys.every(key => key in obj)
     }
   }
 }
