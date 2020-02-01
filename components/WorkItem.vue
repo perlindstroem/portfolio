@@ -58,11 +58,11 @@ export default {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
 }
 
 a:hover {
   text-decoration: underline;
+  background-color: #eeeeee
 }
 </style>
