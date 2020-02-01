@@ -6,6 +6,9 @@
     <p class="period">
       {{ experience.start }} - {{ experience.end || 'ongoing' }}
     </p>
+    <p :key="d" v-for="d in experience.description" class="description">
+      {{ d }}
+    </p>
   </div>
 </template>
 
@@ -35,5 +38,9 @@ export default {
 
 .period {
   color: darkslategray;
+}
+
+.description {
+  padding: .5em;
 }
 </style>
