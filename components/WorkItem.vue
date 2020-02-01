@@ -1,7 +1,7 @@
 <template>
   <div class="work-item">
-    <p class="title">
-      <strong>{{ experience.title }}</strong> at <em>{{ experience.company }}</em>
+    <p class="heading">
+      <span class="title">{{ experience.title }}</span> at <span class="company">{{ experience.company }}</span>
     </p>
     <p class="period">
       {{ experience.start }} - {{ experience.end || 'ongoing' }}
@@ -26,21 +26,34 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .work-item {
   padding-bottom: 1em;
 }
 
-.title {
+.heading {
   font-size: 1.2em;
   margin-bottom: .4em;
+  color: #526488;
+  font-weight: 300;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.company {
+  font-style: italic;
+  font-weight: 400;
 }
 
 .period {
-  color: darkslategray;
+  color: #555;
+  font-weight: 250;
 }
 
 .description {
   padding: .5em;
+  color: #555;
 }
 </style>
