@@ -1,7 +1,7 @@
 <template>
   <div class="work-item">
     <p class="heading">
-      <span class="title">{{ experience.title }}</span> at <span class="company">{{ experience.company }}</span>
+      <span class="title">{{ experience.title }}</span> at <span class="company"><a :href="experience.companyUrl">{{ experience.company }}</a></span>
     </p>
     <p class="period">
       {{ experience.start }} - {{ experience.end || 'ongoing' }}
@@ -55,5 +55,14 @@ export default {
 .description {
   padding: .5em;
   color: #555;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 </style>

@@ -26,6 +26,7 @@ export default {
         {
           title: 'Associate',
           company: 'Digital Edge',
+          companyUrl: 'https://digitaledge.se',
           start: '2019-09',
           end: null,
           description: [
@@ -35,6 +36,7 @@ export default {
         {
           title: 'Research Intern',
           company: 'Signality',
+          companyUrl: 'https://signality.com',
           start: '2019-01',
           end: '2019-07',
           description: [
@@ -44,6 +46,7 @@ export default {
         {
           title: 'Lead Software Engineer',
           company: 'Skira',
+          companyUrl: 'https://skira.se',
           start: '2018-01',
           end: '2019-02',
           description: [
@@ -53,6 +56,7 @@ export default {
         {
           title: 'Software Engineer',
           company: 'GOLI',
+          companyUrl: 'https://goli.nu',
           start: '2017-05',
           end: '2017-12',
           description: [
