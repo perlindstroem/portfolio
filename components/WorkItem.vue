@@ -3,6 +3,9 @@
     <p class="title">
       <strong>{{ experience.title }}</strong> at <em>{{ experience.company }}</em>
     </p>
+    <p class="period">
+      {{ experience.start }} - {{ experience.end || 'ongoing' }}
+    </p>
   </div>
 </template>
 
@@ -23,5 +26,14 @@ export default {
 <style>
 .work-item {
   padding-bottom: 1em;
+}
+
+.title {
+  font-size: 1.2em;
+  margin-bottom: .4em;
+}
+
+.period {
+  color: darkslategray;
 }
 </style>
