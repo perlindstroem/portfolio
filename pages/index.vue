@@ -23,7 +23,7 @@
         </nuxt-link>
         <nuxt-link
           to="/contact"
-          class="button--grey"
+          class="button--green"
         >
           contact me
         </nuxt-link>

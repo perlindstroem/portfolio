@@ -6,9 +6,20 @@
         :key="exp.title"
         :experience="exp"
       />
-      <nuxt-link to="/">
-        go back
-      </nuxt-link>
+      <div class="links">
+        <nuxt-link
+          to="/"
+          class="button--grey"
+        >
+          go back
+        </nuxt-link>
+        <nuxt-link
+          to="/contact"
+          class="button--green"
+        >
+          contact me
+        </nuxt-link>
+      </div>
     </div>
   </div>
 </template>
