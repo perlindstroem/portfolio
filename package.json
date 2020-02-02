@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "postinstall": "netlify-lambda build functions"
+    "build:lambda": "netlify-lambda build functions",
+    "prod": "npm run generate; npm run build:lambda"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint"

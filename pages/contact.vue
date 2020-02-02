@@ -10,7 +10,7 @@
       </label>
       <label>
         <span>how do i reach you?</span>
-        <input v-model="contactDetails" type="text">
+        <input v-model="email" type="text">
       </label>
       <label>
         <span>what do you want to tell me?</span>
@@ -31,20 +31,29 @@ export default {
   data () {
     return {
       name: '',
-      contactDetails: '',
+      email: '',
       message: ''
     }
   },
   methods: {
-    send () {
-      const message = {
-        from: this.name,
-        contact: this.contactDetails,
-        message: this.message
-      }
+    async send () {
+      const response = await fetch('https://mailthis.to/per@lndstrm.com', {
+        method: 'POST',
+        body: {
+          name: this.name,
+          email: this.email,
+          message: this.message
+        }
+      })
 
-      // TODO should send message content to personal email address
-      console.log(message)
+      console.log(response)
+
+      if (response.status === 200) {
+        console.log('thanks!')
+        window.location.href = 'https://mailthis.to/confirm'
+      } else {
+        console.log('something went wrong')
+      }
     }
   }
 }
