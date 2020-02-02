@@ -9,15 +9,13 @@
       <div class="links">
         <nuxt-link
           to="/"
-          class="button--grey"
         >
-          Go back
+          <the-button color="grey" text="Go back" />
         </nuxt-link>
         <nuxt-link
           to="/contact"
-          class="button--green"
         >
-          Contact me
+          <the-button text="Contact me" />
         </nuxt-link>
       </div>
     </div>
@@ -26,10 +24,12 @@
 
 <script>
 import WorkItem from '../components/WorkItem.vue'
+import TheButton from '../components/TheButton.vue'
 
 export default {
   components: {
-    WorkItem
+    WorkItem,
+    TheButton
   },
   data () {
     return {

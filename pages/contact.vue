@@ -7,8 +7,8 @@
       <p>
         Send me an email on <em>per@lndstrm.se</em> instead of using this erranous form.
       </p>
-      <nuxt-link class="button--green" to="/">
-        Go to main page
+      <nuxt-link to="/">
+        <the-button text="Go to main page" />
       </nuxt-link>
     </div>
     <div v-else-if="!sent">
@@ -27,26 +27,29 @@
         <span>What do you want to tell me?</span>
         <textarea v-model="message" rows="5">asd</textarea>
       </label>
-      <nuxt-link class="button--red" to="/">
-        Go back
+      <nuxt-link to="/">
+        <the-button color="red" text="Go back" />
       </nuxt-link>
-      <a @click="send" class="button--green">
-        Send
-      </a>
+      <the-button @click="send" text="Send message" />
     </div>
     <div v-else>
       <h2 class="title">
         Thanks for your message!
       </h2>
-      <nuxt-link class="button--green" to="/">
-        Go to main page
+      <nuxt-link to="/">
+        <the-button text="Go to main page" />
       </nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
+import TheButton from '../components/TheButton.vue'
+
 export default {
+  components: {
+    TheButton
+  },
   data () {
     return {
       name: '',

@@ -17,15 +17,13 @@
       <div class="links">
         <nuxt-link
           to="/experience"
-          class="button--green"
         >
-          Work experience
+          <the-button text="Work experience" />
         </nuxt-link>
         <nuxt-link
           to="/contact"
-          class="button--green"
         >
-          Contact me
+          <the-button text="Contact me" />
         </nuxt-link>
       </div>
     </div>
@@ -33,7 +31,12 @@
 </template>
 
 <script>
+import TheButton from '../components/TheButton.vue'
+
 export default {
+  components: {
+    TheButton
+  }
 }
 </script>
 
