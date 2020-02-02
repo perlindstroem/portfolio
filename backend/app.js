@@ -2,7 +2,7 @@
 const dotenv = require('dotenv')
 dotenv.config()
 
-const port = process.env.BACKEND_PORT || process.env.PORT || 5000
+const port = process.env.PORT || 5000
 const mailjetPublicKey = process.env.MAILJET_PUBLIC
 const mailjetPrivateKey = process.env.MAILJET_PRIVATE
 
@@ -47,4 +47,4 @@ app.post('/mail', (req, res) => {
     })
 })
 
-app.listen(port, () => console.log(`server listening on port ${port}!`))
+app.listen(port, '0.0.0.0', () => console.log(`server listening on port ${port}!`))

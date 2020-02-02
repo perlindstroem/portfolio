@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div>
+    <div v-if="!sent">
       <h2 class="title">
         what can i help you with?
       </h2>
@@ -23,6 +23,11 @@
         send
       </a>
     </div>
+    <div v-else>
+      <h2 class="title">
+        thanks for your message!
+      </h2>
+    </div>
   </div>
 </template>
 
@@ -32,12 +37,13 @@ export default {
     return {
       name: '',
       email: '',
-      message: ''
+      message: '',
+      sent: false
     }
   },
   methods: {
     async send () {
-      const response = await fetch('https://mailthis.to/per@lndstrm.com', {
+      const response = await fetch('https://per-portfolio.herokuapp.com/mail', {
         method: 'POST',
         body: {
           name: this.name,
@@ -50,7 +56,7 @@ export default {
 
       if (response.status === 200) {
         console.log('thanks!')
-        window.location.href = 'https://mailthis.to/confirm'
+        this.sent = true
       } else {
         console.log('something went wrong')
       }
