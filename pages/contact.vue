@@ -45,11 +45,14 @@ export default {
     async send () {
       const response = await fetch('https://per-portfolio.herokuapp.com/mail', {
         method: 'POST',
-        body: {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
           name: this.name,
           email: this.email,
           message: this.message
-        }
+        })
       })
 
       console.log(response)
