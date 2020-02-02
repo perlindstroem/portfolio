@@ -2,31 +2,34 @@
   <div class="container">
     <div v-if="!sent">
       <h2 class="title">
-        what can i help you with?
+        What can I help you with?
       </h2>
       <label>
-        <span>what should i call you?</span>
+        <span>What should I call you?</span>
         <input v-model="name" type="text">
       </label>
       <label>
-        <span>how do i reach you?</span>
+        <span>What's your email address?</span>
         <input v-model="email" type="text">
       </label>
       <label>
-        <span>what do you want to tell me?</span>
+        <span>What do you want to tell me?</span>
         <textarea v-model="message" rows="5">asd</textarea>
       </label>
       <nuxt-link class="button--red" to="/">
-        go back
+        Go back
       </nuxt-link>
       <a @click="send" class="button--green">
-        send
+        Send
       </a>
     </div>
     <div v-else>
       <h2 class="title">
-        thanks for your message!
+        Thanks for your message!
       </h2>
+      <nuxt-link class="button--red" to="/">
+        Go to main page
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -78,6 +81,7 @@ label > span {
   display: block;
   font-size: 1.2em;
   padding: .5em;
+  font-weight: 250;
 }
 
 a:hover {

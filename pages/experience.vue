@@ -11,13 +11,13 @@
           to="/"
           class="button--grey"
         >
-          go back
+          Go back
         </nuxt-link>
         <nuxt-link
           to="/contact"
           class="button--green"
         >
-          contact me
+          Contact me
         </nuxt-link>
       </div>
     </div>

@@ -19,13 +19,13 @@
           to="/experience"
           class="button--green"
         >
-          work experience
+          Work experience
         </nuxt-link>
         <nuxt-link
           to="/contact"
           class="button--green"
         >
-          contact me
+          Contact me
         </nuxt-link>
       </div>
     </div>
