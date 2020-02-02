@@ -2,7 +2,7 @@
 const dotenv = require('dotenv')
 dotenv.config()
 
-const port = 8080 // process.env.BACKEND_PORT
+const port = process.env.BACKEND_PORT || process.env.PORT || 5000
 const mailjetPublicKey = process.env.MAILJET_PUBLIC
 const mailjetPrivateKey = process.env.MAILJET_PRIVATE
 
