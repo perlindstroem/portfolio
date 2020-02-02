@@ -11,6 +11,8 @@ exports.handler = (event, context) => {
   const params = querystring.parse(event.body)
   const name = params.name || 'World'
 
+  console.log(name)
+
   return {
     statusCode: 200,
     body: `Hello, ${name}`
