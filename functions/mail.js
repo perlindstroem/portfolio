@@ -1,6 +1,6 @@
 import querystring from 'querystring'
 
-exports.handler = (event, context) => {
+exports.handler = (event, context, callback) => {
   // Only allow POST
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' }
@@ -13,8 +13,8 @@ exports.handler = (event, context) => {
 
   console.log(name)
 
-  return {
+  callback(null, {
     statusCode: 200,
     body: `Hello, ${name}`
-  }
+  })
 }
