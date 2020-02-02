@@ -1,6 +1,17 @@
 <template>
   <div class="container">
-    <div v-if="!sent">
+    <div v-if="error">
+      <h2 class="title">
+        Ops, something went wrong
+      </h2>
+      <p>
+        Send me an email on <em>per@lndstrm.se</em> instead of using this erranous form.
+      </p>
+      <nuxt-link class="button--green" to="/">
+        Go to main page
+      </nuxt-link>
+    </div>
+    <div v-else-if="!sent">
       <h2 class="title">
         What can I help you with?
       </h2>
@@ -27,7 +38,7 @@
       <h2 class="title">
         Thanks for your message!
       </h2>
-      <nuxt-link class="button--red" to="/">
+      <nuxt-link class="button--green" to="/">
         Go to main page
       </nuxt-link>
     </div>
@@ -41,7 +52,8 @@ export default {
       name: '',
       email: '',
       message: '',
-      sent: false
+      sent: false,
+      error: false
     }
   },
   methods: {
@@ -58,13 +70,10 @@ export default {
         })
       })
 
-      console.log(response)
-
       if (response.status === 200) {
-        console.log('thanks!')
         this.sent = true
       } else {
-        console.log('something went wrong')
+        this.error = true
       }
     }
   }
@@ -77,7 +86,7 @@ label {
   margin-bottom: 1em;
 }
 
-label > span {
+label > span, p {
   display: block;
   font-size: 1.2em;
   padding: .5em;
