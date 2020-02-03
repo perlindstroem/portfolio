@@ -1,8 +1,27 @@
 <template>
   <div>
-    <nuxt />
+    <nuxt :light="light" />
   </div>
 </template>
+
+<script>
+export default {
+  async mounted () {
+    // use Stockholm coordinates to get sunrise/sunset times
+    const response = await fetch('https://api.sunrise-sunset.org/json?lat=59.334591&lng=18.063240&formatted=0')
+    const json = await response.json()
+
+    const now = Date()
+
+    const sunrise = Date(json.results.sunrise)
+    const sunset = Date(json.results.sunset)
+
+    const light = now > sunrise && now < sunset
+
+    this.$store.commit('setLight', light)
+  }
+}
+</script>
 
 <style>
 html {
