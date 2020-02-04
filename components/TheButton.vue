@@ -1,5 +1,5 @@
 <template>
-  <a :class="color" class="button">
+  <a :class="[color, disabledClass]" class="button">
     {{ text }}
   </a>
 </template>
@@ -15,6 +15,16 @@ export default {
       required: false,
       type: String,
       default: 'green'
+    },
+    disabled: {
+      required: false,
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    disabledClass () {
+      return this.disabled === true ? 'disabled' : ''
     }
   }
 }
@@ -87,5 +97,17 @@ export default {
 .dark .red:hover {
   color: #111;
   background-color: #c77f7f;
+}
+
+.disabled {
+  color: #555 !important;
+  background-color: #444 !important;
+  pointer-events: none;
+  cursor: default;
+}
+
+.disabled:hover {
+  color: #555 !important;
+  background-color: #444 !important;
 }
 </style>

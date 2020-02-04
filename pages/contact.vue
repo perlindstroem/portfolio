@@ -30,7 +30,7 @@
       <nuxt-link to="/">
         <the-button color="red" text="Go back" />
       </nuxt-link>
-      <the-button @click="send" text="Send message" />
+      <the-button @click="send" :disabled="disableSend" text="Send message" />
     </div>
     <div v-else>
       <h2 class="title">
@@ -60,7 +60,8 @@ export default {
     }
   },
   computed: {
-    theme () { return this.$store.getters.getTheme }
+    theme () { return this.$store.getters.getTheme },
+    disableSend () { return !(this.name.length > 0 && this.email.length > 0 && this.message.length > 0) }
   },
   methods: {
     async send () {
