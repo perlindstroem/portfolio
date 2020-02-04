@@ -16,10 +16,10 @@ export default {
     const response = await fetch('https://api.sunrise-sunset.org/json?lat=59.334591&lng=18.063240&formatted=0')
     const json = await response.json()
 
-    const now = Date()
+    const now = Date.now()
 
-    const sunrise = Date(json.results.sunrise)
-    const sunset = Date(json.results.sunset)
+    const sunrise = Date.parse(json.results.sunrise)
+    const sunset = Date.parse(json.results.sunset)
 
     const light = now > sunrise && now < sunset
 
