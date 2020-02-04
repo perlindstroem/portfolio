@@ -1,11 +1,16 @@
 <template>
   <div>
-    <nuxt :light="light" />
+    <nuxt />
   </div>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      theme: this.$store.getters.getTheme
+    }
+  },
   async mounted () {
     // use Stockholm coordinates to get sunrise/sunset times
     const response = await fetch('https://api.sunrise-sunset.org/json?lat=59.334591&lng=18.063240&formatted=0')
@@ -50,5 +55,9 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.dark.container {
+  background-color: #111;
 }
 </style>

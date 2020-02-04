@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div :class="theme" class="container">
     <div class="experience">
       <work-item
         v-for="exp in workExperiences"
@@ -76,6 +76,9 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    theme () { return this.$store.getters.getTheme }
   }
 }
 </script>

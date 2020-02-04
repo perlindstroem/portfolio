@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div :key="theme" :class="theme" class="container">
     <div>
       <h1 class="title">
         Hi there, welcome!
@@ -36,6 +36,9 @@ import TheButton from '../components/TheButton.vue'
 export default {
   components: {
     TheButton
+  },
+  computed: {
+    theme () { return this.$store.getters.getTheme }
   }
 }
 </script>

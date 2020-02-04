@@ -9,7 +9,7 @@ export const mutations = {
 }
 
 export const getters = {
-  getLight (state) {
-    return state.light
+  getTheme (state) {
+    return state.light === true ? 'light' : 'dark'
   }
 }

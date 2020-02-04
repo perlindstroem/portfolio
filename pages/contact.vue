@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div :class="theme" class="container">
     <div v-if="error">
       <h2 class="title">
         Ops, something went wrong
@@ -58,6 +58,9 @@ export default {
       sent: false,
       error: false
     }
+  },
+  computed: {
+    theme () { return this.$store.getters.getTheme }
   },
   methods: {
     async send () {
