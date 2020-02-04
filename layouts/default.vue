@@ -4,30 +4,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      theme: this.$store.getters.getTheme
-    }
-  },
-  async mounted () {
-    // use Stockholm coordinates to get sunrise/sunset times
-    const response = await fetch('https://api.sunrise-sunset.org/json?lat=59.334591&lng=18.063240&formatted=0')
-    const json = await response.json()
-
-    const now = Date.now()
-
-    const sunrise = Date.parse(json.results.sunrise)
-    const sunset = Date.parse(json.results.sunset)
-
-    const light = now > sunrise && now < sunset
-
-    this.$store.commit('setLight', light)
-  }
-}
-</script>
-
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',

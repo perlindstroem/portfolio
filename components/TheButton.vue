@@ -39,6 +39,16 @@ export default {
   background-color: #3b8070;
 }
 
+.dark .green {
+  border: 1px solid #62c089;
+  color: #62c089;
+}
+
+.dark .green:hover {
+  color: #111;
+  background-color: #62c089;
+}
+
 .grey {
   border: 1px solid #35495e;
   color: #35495e;
@@ -49,6 +59,16 @@ export default {
   background-color: #35495e;
 }
 
+.dark .grey {
+  border: 1px solid #9eb5ce;
+  color: #9eb5ce;
+}
+
+.dark .grey:hover {
+  color: #111;
+  background-color: #9eb5ce;
+}
+
 .red {
   border: 1px solid #5e3535;
   color: #5e3535;
@@ -57,5 +77,15 @@ export default {
 .red:hover {
   color: #fff;
   background-color: #5e3535;
+}
+
+.dark .red {
+  border: 1px solid #c77f7f;
+  color: #c77f7f;
+}
+
+.dark .red:hover {
+  color: #111;
+  background-color: #c77f7f;
 }
 </style>

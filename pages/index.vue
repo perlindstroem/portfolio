@@ -39,6 +39,20 @@ export default {
   },
   computed: {
     theme () { return this.$store.getters.getTheme }
+  },
+  async fetch ({ store, params }) {
+    // use Stockholm coordinates to get sunrise/sunset times
+    const response = await fetch('https://api.sunrise-sunset.org/json?lat=59.334591&lng=18.063240&formatted=0')
+    const json = await response.json()
+
+    const now = Date.now()
+
+    const sunrise = Date.parse(json.results.sunrise)
+    const sunset = Date.parse(json.results.sunset)
+
+    const light = now > sunrise && now < sunset
+
+    store.commit('setLight', light)
   }
 }
 </script>
@@ -54,6 +68,10 @@ export default {
   letter-spacing: 1px;
 }
 
+.dark .title {
+  color: #95bbe4;
+}
+
 .subtitle {
   font-weight: 300;
   font-size: 42px;
@@ -62,11 +80,19 @@ export default {
   padding-bottom: 15px;
 }
 
+.dark .subtitle {
+  color: rgb(186, 195, 212);
+}
+
 .description {
   line-height: 1.5em;
   font-size: 1.2em;
   color: #2c4055;
   font-weight: 250;
+}
+
+.dark .description {
+  color: #ddd;
 }
 
 .links {

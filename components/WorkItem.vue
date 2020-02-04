@@ -38,6 +38,10 @@ export default {
   font-weight: 300;
 }
 
+.dark .heading {
+  color: #b9c7e4;
+}
+
 .title {
   font-weight: 600;
 }
@@ -52,9 +56,17 @@ export default {
   font-weight: 250;
 }
 
+.dark .period {
+  color: #ddd;
+}
+
 .description {
   padding: .5em;
   color: #555;
+}
+
+.dark .description {
+  color: #ddd;
 }
 
 a {

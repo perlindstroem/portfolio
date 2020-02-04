@@ -92,6 +92,10 @@ label {
   margin-bottom: 1em;
 }
 
+.dark label {
+  color: #bbc9d8;
+}
+
 label > span, p {
   display: block;
   font-size: 1.2em;
@@ -115,7 +119,6 @@ input[type="text"], textarea {
 input[type="text"]:focus, textarea:focus {
   outline:none;
   border: 1px solid green;
-  background: #fff;
 }
 
 .title {
@@ -124,6 +127,10 @@ input[type="text"]:focus, textarea:focus {
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
+}
+
+.dark .title {
+  color: #709ac7;
 }
 
 </style>
