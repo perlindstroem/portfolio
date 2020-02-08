@@ -40,6 +40,10 @@ export default {
   font-size: 1em;
 }
 
+.dark .button {
+  background-color: #111;
+}
+
 .green {
   border: 1px solid #3b8070;
   color: #3b8070;
