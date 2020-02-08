@@ -5,6 +5,7 @@
   "author": "Per Lindström",
   "private": true,
   "scripts": {
+    "start": "node ./backend/app.js",
     "dev": "nuxt",
     "build": "nuxt generate",
     "start:backend": "nodemon ./backend/app.js",

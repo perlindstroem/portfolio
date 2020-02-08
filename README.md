@@ -1,6 +1,10 @@
 # case2
 
-> My awesome Nuxt.js project
+> portfolio built with nuxtjs and express
+
+* uses mailjet api to send emails from contact form
+* uses sunrise-sunset api to get times for sunrise/sunset in order to determine theme
+* hosted on [heroku](https://per-portfolio.herokuapp.com/)
 
 ## Build Setup
 
@@ -8,8 +12,11 @@
 # install dependencies
 $ npm run install
 
-# serve with hot reload at localhost:3000
+# serve frontend with hot reload at localhost:3000 - proxies backend calls to localhost:3010
 $ npm run dev
+
+# serve backend at localhost:3010 - also serves a frontend but has to be generated 
+$ npm run start:backend
 
 # build for production and launch server
 $ npm run build
@@ -19,4 +26,4 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+For detailed explanation on Nuxt, check out [Nuxt.js docs](https://nuxtjs.org).
