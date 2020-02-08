@@ -30,7 +30,9 @@
       <nuxt-link to="/">
         <the-button color="red" text="Go back" />
       </nuxt-link>
-      <the-button @click="send" :disabled="disableSend" text="Send message" />
+      <div @click="send" class="send-wrapper">
+        <the-button :disabled="disableSend" text="Send message" />
+      </div>
     </div>
     <div v-else>
       <h2 class="title">
@@ -65,7 +67,9 @@ export default {
   },
   methods: {
     async send () {
-      const response = await fetch('https://per-portfolio.herokuapp.com/mail', {
+      if (this.disableSend) { return }
+
+      const response = await fetch(process.env.api + '/mail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -132,6 +136,10 @@ input[type="text"]:focus, textarea:focus {
 
 .dark .title {
   color: #709ac7;
+}
+
+.send-wrapper {
+  display: inline;
 }
 
 </style>
