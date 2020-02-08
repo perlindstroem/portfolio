@@ -13,11 +13,20 @@ const mailjetClient = require('node-mailjet')
 // set up express service
 const express = require('express')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 const app = express()
 app.use(bodyParser.json())
 
-// app.get('/', (req, res) => res.send('hello'))
+if (process.env.NODE_ENV === 'dev') {
+  const corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200
+  }
+
+  app.use(cors(corsOptions))
+}
+
 app.use(express.static('dist'))
 
 // mail service endpoint
