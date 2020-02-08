@@ -1,7 +1,7 @@
 <template>
-  <a :class="[color, disabledClass]" class="button">
+  <button :class="[color, disabledClass]" class="button">
     {{ text }}
-  </a>
+  </button>
 </template>
 
 <script>
@@ -33,10 +33,11 @@ export default {
 <style scoped>
 .button {
   display: inline-block;
-  border-radius: 4px;
+  border-radius: .5em;
   text-decoration: none;
-  padding: 10px 30px;
-  margin: 0 5px;
+  padding: 1em 3em;
+  margin: 0 .5em;
+  font-size: 1em;
 }
 
 .green {
