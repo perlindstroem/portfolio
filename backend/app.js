@@ -30,30 +30,53 @@ if (process.env.NODE_ENV === 'dev') {
 app.use(express.static('dist'))
 
 // mail service endpoint
-app.post('/mail', (req, res) => {
+app.post('/mail', async (req, res) => {
   const { name, email, message } = req.body
 
-  mailjetClient
+  // thanks to sender
+  await sendMail({
+    toMail: email,
+    toName: name,
+    fromMail: 'per@lndstrm.se',
+    fromName: 'Per Lindström',
+    message: 'Thanks for your message, will get back to you ASAP.',
+    subject: 'Thank you'
+  }).catch((err) => {
+    console.log('error on thanks-mail', err)
+  })
+
+  // form submission
+  sendMail({
+    toMail: 'per@lndstrm.se',
+    toName: 'Per Lindström',
+    fromMail: email,
+    fromName: name,
+    message,
+    subject: `New form submission from portfolio contact form [${name}/${email}]`
+  }).then(() => {
+    res.status(200).send('ok')
+  }).catch((err) => {
+    res.status(500).send(err)
+  })
+})
+
+async function sendMail ({ toMail, toName, fromMail, fromName, subject, message }) {
+  await mailjetClient
     .post('send', { 'version': 'v3.1' })
     .request({
       'Messages': [{
         'From': {
-          'Email': 'per@lndstrm.se',
-          'Name': name
+          'Email': fromMail,
+          'Name': fromName
         },
         'To': [{
-          'Email': 'per@lndstrm.se',
-          'Name': 'Per Lindström'
+          'Email': toMail,
+          'Name': toName
         }],
-        'Subject': `new form submission from portfolio [${name}/${email}]`,
+        'Subject': subject,
         'TextPart': message
       }]
     })
-    .then(() => {
-      res.status(200).send('ok')
-    }).catch((err) => {
-      res.status(500).send(err)
-    })
-})
+}
 
 app.listen(port, '0.0.0.0', () => console.log(`server listening on port ${port}!`))
